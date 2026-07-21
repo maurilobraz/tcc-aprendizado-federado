@@ -47,35 +47,41 @@ print("1. tabela_estrutura_dados.png")
 # ============================================================
 # TABELA 2: EXEMPLOS POR GRAVIDADE (COM ID)
 # ============================================================
-fig, ax = plt.subplots(figsize=(14, 5))
+fig, ax = plt.subplots(figsize=(15, 5.5))
 ax.axis("off")
 
 col_labels = ["ID", "Empresa", "Setor", "Data", "Tipo", "Parte", "Gravidade", "Dias", "Descrição"]
 table_data = [
-    ["emp_a_0001", "Empresa A", "Construção", "16/08/2024", "Entorse leve", "Joelho", "Leve", "3", "Escorregou no chão úmido..."],
-    ["emp_a_0050", "Empresa A", "Construção", "22/03/2024", "Corte sup.", "Mão", "Leve", "1", "Corte na mão ao manusear furadeira..."],
-    ["emp_b_0050", "Empresa B", "Metalurgia", "12/06/2024", "Queimadura 2°", "Braço", "Moderado", "20", "Queimadura por metal fundido..."],
-    ["emp_c_0050", "Empresa C", "Transporte", "28/09/2024", "Entorse grave", "Coluna", "Moderado", "15", "Entorse na coluna em freada brusca..."],
-    ["emp_a_0150", "Empresa A", "Construção", "03/04/2024", "Fratura exposta", "Perna", "Grave", "90", "Desabamento atingiu trabalhador..."],
-    ["emp_b_0150", "Empresa B", "Metalurgia", "19/07/2024", "Amputação", "Braço", "Grave", "180", "Braço amputado em máquina sem proteção..."],
-    ["emp_c_0150", "Empresa C", "Transporte", "08/12/2024", "Traumatismo", "Cabeça", "Grave", "120", "Colisão entre caminhões..."],
+    ["emp_a_0001", "Empresa A", "Construção", "16/08/2024", "Entorse leve", "Joelho", "Leve", "3", "Escorregou no chão úmido do canteiro e torceu o joelho."],
+    ["emp_a_0050", "Empresa A", "Construção", "22/03/2024", "Corte sup.", "Mão", "Leve", "1", "Corte superficial na mão ao manusear furadeira."],
+    ["emp_b_0050", "Empresa B", "Metalurgia", "12/06/2024", "Queimadura 2°", "Braço", "Mod.", "20", "Queimadura de segundo grau no braço por metal fundido."],
+    ["emp_c_0050", "Empresa C", "Transporte", "28/09/2024", "Entorse grave", "Coluna", "Mod.", "15", "Entorse grave na coluna em freada brusca do caminhão."],
+    ["emp_a_0150", "Empresa A", "Construção", "03/04/2024", "Fratura exposta", "Perna", "Grave", "90", "Desabamento parcial de escoramento atingiu o trabalhador."],
+    ["emp_b_0150", "Empresa B", "Metalurgia", "19/07/2024", "Amputação", "Braço", "Grave", "180", "Braço amputado em máquina de corte sem proteção."],
+    ["emp_c_0150", "Empresa C", "Transporte", "08/12/2024", "Traumatismo", "Cabeça", "Grave", "120", "Colisão entre dois caminhões em rodovia federal."],
 ]
 
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
-table.set_fontsize(8)
-table.scale(1.0, 1.3)
+table.set_fontsize(9)
+table.scale(1.0, 1.5)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
-    table[0, j].set_text_props(color="white", fontweight="bold", fontsize=8)
+    table[0, j].set_text_props(color="white", fontweight="bold", fontsize=9)
 
-colors_map = {"Leve": "#E8F8F5", "Moderado": "#FEF9E7", "Grave": "#FDEDEC"}
+colors_map = {"Leve": "#E8F8F5", "Mod.": "#FEF9E7", "Grave": "#FDEDEC"}
 for i in range(len(table_data)):
     gravidade = table_data[i][6]
     color = colors_map.get(gravidade, "#FFFFFF")
     for j in range(len(col_labels)):
         table[i + 1, j].set_facecolor(color)
+
+# Ajustar largura das colunas
+col_widths = [0.08, 0.08, 0.08, 0.08, 0.1, 0.07, 0.07, 0.05, 0.39]
+for j, w in enumerate(col_widths):
+    for i in range(len(table_data) + 1):
+        table[i, j].set_width(w)
 
 ax.set_title("Figura 2 — Exemplos de CATs por Nível de Gravidade", fontweight="bold", fontsize=11, pad=1)
 ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
@@ -88,7 +94,7 @@ print("2. tabela_exemplos_gravidade.png")
 # ============================================================
 # TABELA 3: EXEMPLO FORMATADO (SEM ID)
 # ============================================================
-fig, ax = plt.subplots(figsize=(10, 4.2))
+fig, ax = plt.subplots(figsize=(10, 4.5))
 ax.axis("off")
 
 col_labels = ["Campo", "Valor"]
@@ -105,8 +111,8 @@ table_data = [
 
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
-table.set_fontsize(11)
-table.scale(1.2, 1.4)
+table.set_fontsize(10)
+table.scale(1.0, 1.5)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -116,6 +122,11 @@ for i in range(len(table_data)):
     table[i + 1, 0].set_facecolor("#3498DB")
     table[i + 1, 0].set_text_props(color="white", fontweight="bold")
     table[i + 1, 1].set_facecolor("#EBF5FB")
+
+# Ajustar largura
+for i in range(len(table_data) + 1):
+    table[i, 0].set_width(0.35)
+    table[i, 1].set_width(0.65)
 
 ax.set_title("Figura 3 — Exemplo de CAT Formatada", fontweight="bold", fontsize=11, pad=1)
 ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
@@ -128,7 +139,7 @@ print("3. tabela_exemplo_formatado.png")
 # ============================================================
 # TABELA 4: DISTRIBUICAO DAS CATs
 # ============================================================
-fig, ax = plt.subplots(figsize=(8, 4.2))
+fig, ax = plt.subplots(figsize=(9, 4.5))
 ax.axis("off")
 
 col_labels = ["Empresa", "Setor", "Leve", "Moderado", "Grave", "Total"]
@@ -142,7 +153,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.4)
+table.scale(1.2, 1.5)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -174,7 +185,7 @@ print("4. tabela_distribuicao.png")
 # ============================================================
 # TABELA 5: RESULTADOS DOS EXPERIMENTOS
 # ============================================================
-fig, ax = plt.subplots(figsize=(10, 4.2))
+fig, ax = plt.subplots(figsize=(11, 4.5))
 ax.axis("off")
 
 col_labels = ["Experimento", "CATs", "Melhor Acc", "F1", "Round", "Isolado", "Ganho"]
@@ -187,7 +198,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.4)
+table.scale(1.2, 1.5)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -209,7 +220,7 @@ print("5. tabela_resultados.png")
 # ============================================================
 # TABELA 6: VIABILIDADE
 # ============================================================
-fig, ax = plt.subplots(figsize=(10, 4.2))
+fig, ax = plt.subplots(figsize=(11, 4.5))
 ax.axis("off")
 
 col_labels = ["Configuração", "Tempo/CAT", "50 CATs", "100 CATs", "Custo"]
@@ -223,7 +234,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.4)
+table.scale(1.2, 1.5)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
