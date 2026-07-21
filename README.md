@@ -15,14 +15,21 @@ experimentos/
 ├── zero_shot.py                # Experimento baseline (sem treino)
 ├── fl_50_cats.py               # FL com 50 CATs por empresa
 ├── fl_encrypted.py             # FL com criptografia AES-256 e IPFS
-└── tcc_final_ate_fl100.ipynb   # Notebook completo para Google Colab
+├── tcc_final_ate_fl100.ipynb   # Notebook FL (10 rounds)
+└── tcc_crypto_5rounds.ipynb    # Notebook FL + Criptografia (5 rounds)
 ```
 
 ## Como Executar
 
 ### Opção 1: Google Colab (Recomendado)
 
-1. Abra o notebook `tcc_final_ate_fl100.ipynb` no Google Colab
+#### Notebook FL (10 rounds)
+1. Abra `tcc_final_ate_fl100.ipynb` no Google Colab
+2. Configure GPU: Runtime > Change runtime type > GPU: T4
+3. Execute todas as células
+
+#### Notebook FL + Criptografia (5 rounds)
+1. Abra `tcc_crypto_5rounds.ipynb` no Google Colab
 2. Configure GPU: Runtime > Change runtime type > GPU: T4
 3. Execute todas as células
 
@@ -53,7 +60,7 @@ python experimentos/fl_encrypted.py
 | Modelo | Qwen/Qwen2.5-1.5B-Instruct |
 | Quantização | 4-bit NF4 |
 | LoRA | r=8, alpha=16, dropout=0.1 |
-| Rounds | 10 |
+| Rounds | 5 ou 10 |
 | Epochs | 1 |
 | Learning Rate | 1e-4 |
 | Batch Size | 4 |
@@ -62,11 +69,21 @@ python experimentos/fl_encrypted.py
 
 ## Resultados
 
+### FL (10 rounds)
+
 | Experimento | CATs | Melhor Acc | F1 | Round |
 |-------------|------|------------|-----|-------|
 | Zero-Shot | 0 | 0.6467 | 0.5066 | N/A |
 | FL 50 | 50 | 0.7622 | 0.6676 | 7 |
 | FL 100 | 100 | 0.8733 | 0.8336 | 8 |
+
+### FL + Criptografia (5 rounds)
+
+| Experimento | CATs | Melhor Acc | F1 | Round | IPFS CIDs |
+|-------------|------|------------|-----|-------|-----------|
+| Zero-Shot | 0 | - | - | N/A | N/A |
+| FL 50 | 50 | - | - | - | 15 |
+| FL 100 | 100 | - | - | - | 15 |
 
 ## Hipótese Confirmada
 
