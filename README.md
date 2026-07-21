@@ -15,6 +15,7 @@ experimentos/
 ├── zero_shot.py                # Experimento baseline (sem treino)
 ├── fl_50_cats.py               # FL com 50 CATs por empresa
 ├── fl_encrypted.py             # FL com criptografia AES-256 e IPFS
+├── viabilidade.py              # Análise de viabilidade para empresa
 ├── tcc_final_ate_fl100.ipynb   # Notebook FL (10 rounds)
 ├── tcc_crypto_5rounds.ipynb    # Notebook FL + Criptografia (5 rounds)
 └── tcc_5rounds.ipynb           # Notebook FL (5 rounds, sem criptografia)
@@ -22,7 +23,7 @@ experimentos/
 
 ## Como Executar
 
-### Opção 1: Google Colab (Recomendado)
+### Opção 1: Google Colab (Recomendado para testes)
 
 #### Notebook FL (5 rounds)
 1. Abra `tcc_5rounds.ipynb` no Google Colab
@@ -34,17 +35,12 @@ experimentos/
 2. Configure GPU: Runtime > Change runtime type > GPU: T4
 3. Execute todas as células
 
-#### Notebook FL (10 rounds)
-1. Abra `tcc_final_ate_fl100.ipynb` no Google Colab
-2. Configure GPU: Runtime > Change runtime type > GPU: T4
-3. Execute todas as células
-
 ### Opção 2: Localmente
 
 ```bash
 # Instalar dependências
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
-pip install transformers datasets bitsandbytes peft accelerate scikit-learn matplotlib cryptography
+pip install transformers datasets bitsandbytes peft accelerate scikit-learn matplotlib cryptography psutil
 
 # Gerar dados
 python experimentos/gerar_cats_sinteticas.py
@@ -57,6 +53,19 @@ python experimentos/fl_50_cats.py
 
 # Executar FL com Criptografia
 python experimentos/fl_encrypted.py
+
+# Analisar viabilidade
+python experimentos/viabilidade.py
+```
+
+### Opção 3: Software para Empresa
+
+```bash
+# Executar análise de viabilidade
+python experimentos/viabilidade.py
+
+# Executar software de análise de CATs
+python experimentos/analisar_cats.py [pasta_com_cats]
 ```
 
 ## Parâmetros dos Experimentos
@@ -94,6 +103,34 @@ python experimentos/fl_encrypted.py
 ## Hipótese Confirmada
 
 Mais CATs disponíveis para treino levam a melhor acurácia, mesmo sem compartilhar os dados diretamente.
+
+## Viabilidade para Empresa de Médio Porte
+
+### Configuração Mínima
+
+| Componente | Mínimo | Recomendado |
+|------------|--------|-------------|
+| CPU | Intel i5 / AMD Ryzen 5 | Intel i7 / AMD Ryzen 7 |
+| RAM | 8 GB | 16 GB |
+| GPU | Sem GPU (CPU only) | NVIDIA GTX 1650 (4GB) |
+| Armazenamento | 50 GB SSD | 100 GB SSD |
+| Internet | 10 Mbps | 50 Mbps |
+
+### Custo Estimado
+
+| Configuração | Custo (R$) | Observação |
+|--------------|------------|------------|
+| Básica (CPU only) | R$ 3.000-4.000 | Funciona, mas lento |
+| Intermediária (GPU) | R$ 5.000-7.000 | Melhor custo-benefício |
+| Avançada (GPU potente) | R$ 8.000-12.000 | Para alto volume |
+
+### Overhead de Criptografia
+
+| Componente | Overhead |
+|------------|----------|
+| AES-256 | < 1% |
+| IPFS | Dependente da rede |
+| Total | Viável para internet 10+ Mbps |
 
 ## Arquitetura de Segurança
 
