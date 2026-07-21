@@ -1,0 +1,24 @@
+{
+  "data": "2026-07-21T02:40:48.288248",
+  "configuracao": {
+    "processador": "Intel Xeon E5-2640 v3 (8 cores)",
+    "ram_gb": 16,
+    "gpu": "Nenhuma (CPU only)"
+  },
+  "resultados": {
+    "tempo_medio_por_cat_segundos": 6.26,
+    "tempo_total_10_cats_segundos": 62.6
+  },
+  "extrapolacao": {
+    "10_cats_dia_segundos": 62.6,
+    "20_cats_dia_segundos": 125.2,
+    "50_cats_dia_segundos": 313.0,
+    "100_cats_dia_segundos": 626.0,
+    "200_cats_dia_segundos": 1252.0
+  },
+  "viabilidade": {
+    "volume_baixo_20": "VIAVEL",
+    "volume_medio_50": "VIAVEL",
+    "volume_alto_100": "RECOMENDADO GPU"
+  }
+}

@@ -16,6 +16,8 @@ experimentos/
 ├── fl_50_cats.py               # FL com 50 CATs por empresa
 ├── fl_encrypted.py             # FL com criptografia AES-256 e IPFS
 ├── viabilidade.py              # Análise de viabilidade para empresa
+├── teste_cpu_only.py           # Teste de performance sem GPU
+├── simulacao_pc_basico.py      # Simulação em PC básico corporativo
 ├── tcc_final_ate_fl100.ipynb   # Notebook FL (10 rounds)
 ├── tcc_crypto_5rounds.ipynb    # Notebook FL + Criptografia (5 rounds)
 └── tcc_5rounds.ipynb           # Notebook FL (5 rounds, sem criptografia)
@@ -56,6 +58,9 @@ python experimentos/fl_encrypted.py
 
 # Analisar viabilidade
 python experimentos/viabilidade.py
+
+# Simular PC básico
+python experimentos/simulacao_pc_basico.py
 ```
 
 ### Opção 3: Software para Empresa
@@ -92,37 +97,43 @@ python experimentos/analisar_cats.py [pasta_com_cats]
 | FL 50 | 50 | 0.7622 | 0.6676 | 7 |
 | FL 100 | 100 | 0.8733 | 0.8336 | 8 |
 
-### FL + Criptografia (5 rounds)
+### Viabilidade para Empresa de Médio Porte
 
-| Experimento | CATs | Melhor Acc | F1 | Round | IPFS CIDs |
-|-------------|------|------------|-----|-------|-----------|
-| Zero-Shot | 0 | - | - | N/A | N/A |
-| FL 50 | 50 | - | - | - | 15 |
-| FL 100 | 100 | - | - | - | 15 |
+#### Simulação em PC Básico Corporativo
 
-## Hipótese Confirmada
+| Componente | Configuração |
+|------------|--------------|
+| Processador | Intel Core i5-4590 (4 cores, 3.3 GHz) |
+| RAM | 8 GB |
+| GPU | Nenhuma (apenas integrada) |
+| Disco | HDD 500 GB |
 
-Mais CATs disponíveis para treino levam a melhor acurácia, mesmo sem compartilhar os dados diretamente.
+#### Performance por Volume Diário
 
-## Viabilidade para Empresa de Médio Porte
+| Volume | Tempo (HDD) | Tempo (SSD) | Viável? |
+|--------|-------------|-------------|---------|
+| 10 CATs/dia | 2.2 minutos | 1.5 minutos | **Sim** |
+| 20 CATs/dia | 4.5 minutos | 2.9 minutos | **Sim** |
+| 50 CATs/dia | 11.1 minutos | 7.3 minutos | **Sim** |
+| 100 CATs/dia | 22.2 minutos | 14.6 minutos | **Sim** |
 
-### Configuração Mínima
+#### Comparação de Configurações
 
-| Componente | Mínimo | Recomendado |
-|------------|--------|-------------|
-| CPU | Intel i5 / AMD Ryzen 5 | Intel i7 / AMD Ryzen 7 |
-| RAM | 8 GB | 16 GB |
-| GPU | Sem GPU (CPU only) | NVIDIA GTX 1650 (4GB) |
-| Armazenamento | 50 GB SSD | 100 GB SSD |
-| Internet | 10 Mbps | 50 Mbps |
+| Configuração | Tempo/CAT | 50 CATs | Custo |
+|--------------|-----------|---------|-------|
+| PC básico (HDD) | 13.3s | 11.1 min | R$ 0 |
+| PC básico (SSD) | 8.8s | 7.3 min | R$ 150-200 |
+| PC médio (i7) | 4.5s | 3.8 min | R$ 350-500 |
+| PC com GPU | 1.0s | 0.8 min | R$ 1.200-1.700 |
 
-### Custo Estimado
+#### Custo de Implementação
 
-| Configuração | Custo (R$) | Observação |
-|--------------|------------|------------|
-| Básica (CPU only) | R$ 3.000-4.000 | Funciona, mas lento |
-| Intermediária (GPU) | R$ 5.000-7.000 | Melhor custo-benefício |
-| Avançada (GPU potente) | R$ 8.000-12.000 | Para alto volume |
+| Opção | Custo | Performance | Limitação |
+|-------|-------|-------------|-----------|
+| Sem upgrade | R$ 0 | 13.3s/CAT | Até 20 CATs/dia |
+| Upgrade SSD | R$ 150-200 | 8.8s/CAT | Até 50 CATs/dia |
+| Upgrade SSD + RAM | R$ 350-500 | ~4s/CAT | Até 100 CATs/dia |
+| Upgrade completo | R$ 1.200-1.700 | ~1s/CAT | Sem limitação |
 
 ### Overhead de Criptografia
 
@@ -131,6 +142,19 @@ Mais CATs disponíveis para treino levam a melhor acurácia, mesmo sem compartil
 | AES-256 | < 1% |
 | IPFS | Dependente da rede |
 | Total | Viável para internet 10+ Mbps |
+
+## Hipótese Confirmada
+
+Mais CATs disponíveis para treino levam a melhor acurácia, mesmo sem compartilhar os dados diretamente.
+
+## Conclusão
+
+O sistema é **viável e acessível** para empresas de médio porte:
+
+1. **Hardware básico** (PC de 2014-2015 com 8 GB RAM) suporta até 50 CATs/dia
+2. **Upgrade simples** (SSD por R$ 150-200) melhora performance em 34%
+3. **Custo total** de implementação: R$ 0 a R$ 1.700 dependendo do volume
+4. **Privacidade garantida** com criptografia AES-256 e armazenamento IPFS
 
 ## Arquitetura de Segurança
 

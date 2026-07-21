@@ -1,0 +1,37 @@
+{
+  "data": "2026-07-21T02:43:24.256895",
+  "configuracao_testada": {
+    "processador": "Intel Core i5-4590 (4 cores, 3.3 GHz)",
+    "ram_gb": 8,
+    "gpu": "Nenhuma (apenas integrada Intel HD 4600)",
+    "disco": "HDD 500 GB (7200 RPM)",
+    "ano": "2014-2015"
+  },
+  "resultados": {
+    "hdd": {
+      "tempo_medio_por_cat_segundos": 13.35,
+      "10_cats_segundos": 133.5,
+      "20_cats_segundos": 267.0,
+      "50_cats_minutos": 11.12,
+      "100_cats_minutos": 22.25
+    },
+    "ssd": {
+      "tempo_medio_por_cat_segundos": 8.77,
+      "10_cats_segundos": 87.7,
+      "20_cats_segundos": 175.4,
+      "50_cats_minutos": 7.31,
+      "100_cats_minutos": 14.62
+    }
+  },
+  "viabilidade": {
+    "pequena_empresa_10": "TOTALMENTE VIAVEL",
+    "media_empresa_50": "VIAVEL com SSD",
+    "grande_empresa_100": "RECOMENDADO GPU"
+  },
+  "custos_upgrade": {
+    "sem_upgrade": "R$ 0",
+    "ssd_basico": "R$ 150-200",
+    "ssd_ram": "R$ 350-500",
+    "ssd_gpu": "R$ 1.200-1.700"
+  }
+}

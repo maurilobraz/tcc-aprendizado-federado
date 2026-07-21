@@ -1,0 +1,78 @@
+{
+  "data": "2026-07-21T02:36:53.970890",
+  "total_cats": 10,
+  "tempo_total_segundos": 9.8,
+  "tempo_medio_por_cat": 0.98,
+  "resultados": [
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 1,
+      "descricao": "id,descricao,classificacao_esperada...",
+      "classificacao": "leve",
+      "tempo_segundos": 1.56
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 2,
+      "descricao": "CAT_001,Trabalhador escorregou no chao umido do canteiro e torceu o tornozelo. Nao houve fratura.,le...",
+      "classificacao": "leve",
+      "tempo_segundos": 0.87
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 3,
+      "descricao": "CAT_002,Corte superficial na mao ao manusear furadeira. Atendimento no posto de saude.,leve...",
+      "classificacao": "leve",
+      "tempo_segundos": 0.85
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 4,
+      "descricao": "CAT_003,Queimadura leve no antebraco por respingo de solda. Primeiro socorro no local.,leve...",
+      "classificacao": "leve",
+      "tempo_segundos": 1.04
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 5,
+      "descricao": "CAT_004,Trabalhador sentiu dor no punho apos repetir movimento de assentamento de tijolos.,leve...",
+      "classificacao": "leve",
+      "tempo_segundos": 0.89
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 6,
+      "descricao": "CAT_005,Pequeno corte no dedo ao cortar vergalhao com alicate. Curativo e liberacao no mesmo dia.,le...",
+      "classificacao": "leve",
+      "tempo_segundos": 0.87
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 7,
+      "descricao": "CAT_006,Hematoma na coxa apos colisao com carrinho de mao no corredor do canteiro.,leve...",
+      "classificacao": "moderado",
+      "tempo_segundos": 1.16
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 8,
+      "descricao": "CAT_007,Escoriacao no braco por estilha de madeira durante corte com serra. Sem sequelas.,leve...",
+      "classificacao": "leve",
+      "tempo_segundos": 0.85
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 9,
+      "descricao": "CAT_008,\"Queda do proprio nivel no patio da obra. Joelho escoriado, sem necessidade de afastamento.\"...",
+      "classificacao": "leve",
+      "tempo_segundos": 0.85
+    },
+    {
+      "arquivo": "cats_exemplo.csv",
+      "linha": 10,
+      "descricao": "CAT_009,Dor lombar apos carregar saco de cimento por 3 horas. Analgesico e repouso de 2 dias.,leve...",
+      "classificacao": "leve",
+      "tempo_segundos": 0.85
+    }
+  ]
+}

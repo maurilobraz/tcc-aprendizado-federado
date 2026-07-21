@@ -1,0 +1,21 @@
+id,descricao,classificacao_esperada
+CAT_001,Trabalhador escorregou no chao umido do canteiro e torceu o tornozelo. Nao houve fratura.,leve
+CAT_002,Corte superficial na mao ao manusear furadeira. Atendimento no posto de saude.,leve
+CAT_003,Queimadura leve no antebraco por respingo de solda. Primeiro socorro no local.,leve
+CAT_004,Trabalhador sentiu dor no punho apos repetir movimento de assentamento de tijolos.,leve
+CAT_005,Pequeno corte no dedo ao cortar vergalhao com alicate. Curativo e liberacao no mesmo dia.,leve
+CAT_006,Hematoma na coxa apos colisao com carrinho de mao no corredor do canteiro.,leve
+CAT_007,Escoriacao no braco por estilha de madeira durante corte com serra. Sem sequelas.,leve
+CAT_008,"Queda do proprio nivel no patio da obra. Joelho escoriado, sem necessidade de afastamento.",leve
+CAT_009,Dor lombar apos carregar saco de cimento por 3 horas. Analgesico e repouso de 2 dias.,leve
+CAT_010,Picada de abelha no braco durante servico no telhado. Inchaço local.,leve
+CAT_011,Trabalhador caiu de andaime de 3 metros. Fratura no punho esquerdo. Afastamento de 30 dias.,moderado
+CAT_012,Corte profundo na mao direita com serra circular. Necessitou de 8 pontos de sutura.,moderado
+CAT_013,Queimadura de segundo grau no braco por contato com cano de agua quente exposto.,moderado
+CAT_014,Queda de escada de 2 metros. Entorse grave no joelho. Gesso por 21 dias.,moderado
+CAT_015,Contusao no ombro apos queda de ferramenta de altura. Limitacao de movimento.,moderado
+CAT_016,Lesao no joelho apos agachamento repetitivo durante assentamento de piso. Afastamento de 15 dias.,moderado
+CAT_017,Fratura no dedo apos prensamento entre tijolos. Imobilizacao por 30 dias.,moderado
+CAT_018,Choque eletrico no antebraco ao tocar fio desencapado. Afastamento de 10 dias.,moderado
+CAT_019,Desabamento parcial de escoramento atingiu trabalhador. Fratura exposta na perna. Internacao.,grave
+CAT_020,Queda de altura de 7 metros da torre de edificio em construcao. Traumatismo craniano grave.,grave

@@ -1,0 +1,31 @@
+{
+  "data": "2026-07-21T02:35:06.128564",
+  "sistema": {
+    "sistema": "Windows",
+    "versao": "10.0.19045",
+    "processador": "Intel64 Family 6 Model 63 Stepping 2, GenuineIntel",
+    "ram_total_gb": 15.91,
+    "ram_disponivel_gb": 4.76,
+    "ram_percentual": 70.0,
+    "cpu_percentual": 24.4,
+    "cpu_nucleos": 16,
+    "disco_total_gb": 237.85,
+    "disco_livre_gb": 27.95,
+    "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+    "gpu_memoria_gb": 6.0,
+    "gpu_disponivel": true
+  },
+  "requisitos": {
+    "RAM minima (8 GB)": true,
+    "RAM recomendada (16 GB)": false,
+    "Disco livre (min 10 GB)": true,
+    "CPU multipla": true,
+    "GPU com memoria (min 4 GB)": true
+  },
+  "todos_requisitos_atendidos": false,
+  "tempo_estimado_100_cats_segundos": 72.0,
+  "viavel": false,
+  "custo_estimado_hardware": "R$ 5.000 - R$ 7.000",
+  "overhead_criptografia": "< 1%",
+  "script_demonstracao": "analisar_cats.py"
+}

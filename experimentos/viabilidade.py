@@ -104,20 +104,20 @@ def verificar_sistema():
     for dep in dependencias:
         try:
             __import__(dep)
-            print(f"✓ {dep} instalado")
+            print(f"[OK] {dep} instalado")
         except ImportError:
-            print(f"✗ {dep} NAO instalado - execute: pip install {dep}")
+            print(f"[FALTA] {dep} NAO instalado - execute: pip install {dep}")
             return False
     
     # Verificar GPU
     try:
         import torch
         if torch.cuda.is_available():
-            print(f"✓ GPU: {torch.cuda.get_device_name(0)}")
+            print(f"[OK] GPU: {torch.cuda.get_device_name(0)}")
         else:
-            print("⚠ GPU nao detectada - processamento sera mais lento")
+            print("[AVISO] GPU nao detectada - processamento sera mais lento")
     except:
-        print("⚠ PyTorch sem suporte a GPU")
+        print("[AVISO] PyTorch sem suporte a GPU")
     
     return True
 
@@ -150,11 +150,11 @@ def carregar_modelo():
             torch_dtype=torch.float16
         )
         
-        print("✓ Modelo carregado com sucesso!")
+        print("[OK] Modelo carregado com sucesso!")
         return model, tokenizer
         
     except Exception as e:
-        print(f"✗ Erro ao carregar modelo: {e}")
+        print(f"[FALTA] Erro ao carregar modelo: {e}")
         return None, None
 
 def analisar_cat(model, tokenizer, descricao):
@@ -308,7 +308,7 @@ def main():
     requisitos = check_requirements(info)
     
     for req, atende in requisitos.items():
-        status = "✓" if atende else "✗"
+        status = "[OK]" if atende else "[FALTA]"
         print(f"{status} {req}")
     
     todos_atendidos = all(requisitos.values())
@@ -339,11 +339,11 @@ def main():
     
     print(f"\\nVIABILIDADE:")
     if todos_atendidos:
-        print("  ✓ SISTEMA VIAVEL para uso em empresa de medio porte")
-        print("  ✓ Hardware atende todos os requisitos")
+        print("  [OK] SISTEMA VIAVEL para uso em empresa de medio porte")
+        print("  [OK] Hardware atende todos os requisitos")
     else:
-        print("  ⚠ SISTEMA PARCIALMENTE VIAVEL")
-        print("  ⚠ Alguns requisitos nao foram atendidos")
+        print("  [AVISO] SISTEMA PARCIALMENTE VIAVEL")
+        print("  [AVISO] Alguns requisitos nao foram atendidos")
     
     print(f"\\nCUSTO ESTIMADO (HARDWARE):")
     if info['gpu_disponivel']:
