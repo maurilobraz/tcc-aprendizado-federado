@@ -7,7 +7,7 @@ os.makedirs("tabelas_tcc", exist_ok=True)
 # ============================================================
 # TABELA 1: ESTRUTURA DOS DADOS (SEM ID)
 # ============================================================
-fig, ax = plt.subplots(figsize=(10, 4.5))
+fig, ax = plt.subplots(figsize=(10, 4.2))
 ax.axis("off")
 
 col_labels = ["Campo", "Tipo", "Exemplo"]
@@ -25,7 +25,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.5)
+table.scale(1.2, 1.4)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -36,18 +36,18 @@ for i in range(len(table_data)):
     for j in range(len(col_labels)):
         table[i + 1, j].set_facecolor(color)
 
-ax.set_title("Figura 1 — Estrutura dos Dados das CATs Sintéticas", fontweight="bold", fontsize=11, pad=2)
-ax.text(0.5, 0.01, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
+ax.set_title("Figura 1 — Estrutura dos Dados das CATs Sintéticas", fontweight="bold", fontsize=11, pad=1)
+ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
         fontsize=9, color="black", style="italic", transform=ax.transAxes)
-plt.subplots_adjust(top=0.95, bottom=0.05)
-plt.savefig("tabelas_tcc/tabela_estrutura_dados.png", dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.subplots_adjust(top=0.97, bottom=0.03)
+plt.savefig("tabelas_tcc/tabela_estrutura_dados.png", dpi=200, bbox_inches="tight", pad_inches=0.05)
 plt.close()
 print("1. tabela_estrutura_dados.png")
 
 # ============================================================
 # TABELA 2: EXEMPLOS POR GRAVIDADE (COM ID)
 # ============================================================
-fig, ax = plt.subplots(figsize=(14, 5.5))
+fig, ax = plt.subplots(figsize=(14, 5))
 ax.axis("off")
 
 col_labels = ["ID", "Empresa", "Setor", "Data", "Tipo", "Parte", "Gravidade", "Dias", "Descrição"]
@@ -64,7 +64,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(8)
-table.scale(1.0, 1.4)
+table.scale(1.0, 1.3)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -77,18 +77,18 @@ for i in range(len(table_data)):
     for j in range(len(col_labels)):
         table[i + 1, j].set_facecolor(color)
 
-ax.set_title("Figura 2 — Exemplos de CATs por Nível de Gravidade", fontweight="bold", fontsize=11, pad=2)
-ax.text(0.5, 0.01, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
+ax.set_title("Figura 2 — Exemplos de CATs por Nível de Gravidade", fontweight="bold", fontsize=11, pad=1)
+ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
         fontsize=9, color="black", style="italic", transform=ax.transAxes)
-plt.subplots_adjust(top=0.95, bottom=0.05)
-plt.savefig("tabelas_tcc/tabela_exemplos_gravidade.png", dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.subplots_adjust(top=0.97, bottom=0.03)
+plt.savefig("tabelas_tcc/tabela_exemplos_gravidade.png", dpi=200, bbox_inches="tight", pad_inches=0.05)
 plt.close()
 print("2. tabela_exemplos_gravidade.png")
 
 # ============================================================
 # TABELA 3: EXEMPLO FORMATADO (SEM ID)
 # ============================================================
-fig, ax = plt.subplots(figsize=(10, 4.5))
+fig, ax = plt.subplots(figsize=(10, 4.2))
 ax.axis("off")
 
 col_labels = ["Campo", "Valor"]
@@ -106,7 +106,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.5)
+table.scale(1.2, 1.4)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -117,18 +117,18 @@ for i in range(len(table_data)):
     table[i + 1, 0].set_text_props(color="white", fontweight="bold")
     table[i + 1, 1].set_facecolor("#EBF5FB")
 
-ax.set_title("Figura 3 — Exemplo de CAT Formatada", fontweight="bold", fontsize=11, pad=2)
-ax.text(0.5, 0.01, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
+ax.set_title("Figura 3 — Exemplo de CAT Formatada", fontweight="bold", fontsize=11, pad=1)
+ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
         fontsize=9, color="black", style="italic", transform=ax.transAxes)
-plt.subplots_adjust(top=0.95, bottom=0.05)
-plt.savefig("tabelas_tcc/tabela_exemplo_formatado.png", dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.subplots_adjust(top=0.97, bottom=0.03)
+plt.savefig("tabelas_tcc/tabela_exemplo_formatado.png", dpi=200, bbox_inches="tight", pad_inches=0.05)
 plt.close()
 print("3. tabela_exemplo_formatado.png")
 
 # ============================================================
 # TABELA 4: DISTRIBUICAO DAS CATs
 # ============================================================
-fig, ax = plt.subplots(figsize=(8, 4.5))
+fig, ax = plt.subplots(figsize=(8, 4.2))
 ax.axis("off")
 
 col_labels = ["Empresa", "Setor", "Leve", "Moderado", "Grave", "Total"]
@@ -142,7 +142,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.5)
+table.scale(1.2, 1.4)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -163,18 +163,18 @@ for j in range(len(col_labels)):
     table[4, j].set_facecolor("#2C3E50")
     table[4, j].set_text_props(color="white", fontweight="bold")
 
-ax.set_title("Figura 4 — Distribuição das CATs por Empresa e Gravidade", fontweight="bold", fontsize=11, pad=2)
-ax.text(0.5, 0.01, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
+ax.set_title("Figura 4 — Distribuição das CATs por Empresa e Gravidade", fontweight="bold", fontsize=11, pad=1)
+ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
         fontsize=9, color="black", style="italic", transform=ax.transAxes)
-plt.subplots_adjust(top=0.95, bottom=0.05)
-plt.savefig("tabelas_tcc/tabela_distribuicao.png", dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.subplots_adjust(top=0.97, bottom=0.03)
+plt.savefig("tabelas_tcc/tabela_distribuicao.png", dpi=200, bbox_inches="tight", pad_inches=0.05)
 plt.close()
 print("4. tabela_distribuicao.png")
 
 # ============================================================
 # TABELA 5: RESULTADOS DOS EXPERIMENTOS
 # ============================================================
-fig, ax = plt.subplots(figsize=(10, 4.5))
+fig, ax = plt.subplots(figsize=(10, 4.2))
 ax.axis("off")
 
 col_labels = ["Experimento", "CATs", "Melhor Acc", "F1", "Round", "Isolado", "Ganho"]
@@ -187,7 +187,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.5)
+table.scale(1.2, 1.4)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -198,18 +198,18 @@ for i in range(3):
     for j in range(len(col_labels)):
         table[i + 1, j].set_facecolor(colors[i])
 
-ax.set_title("Figura 5 — Resultados dos Experimentos (5 Rounds)", fontweight="bold", fontsize=11, pad=2)
-ax.text(0.5, 0.01, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
+ax.set_title("Figura 5 — Resultados dos Experimentos (5 Rounds)", fontweight="bold", fontsize=11, pad=1)
+ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
         fontsize=9, color="black", style="italic", transform=ax.transAxes)
-plt.subplots_adjust(top=0.95, bottom=0.05)
-plt.savefig("tabelas_tcc/tabela_resultados.png", dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.subplots_adjust(top=0.97, bottom=0.03)
+plt.savefig("tabelas_tcc/tabela_resultados.png", dpi=200, bbox_inches="tight", pad_inches=0.05)
 plt.close()
 print("5. tabela_resultados.png")
 
 # ============================================================
 # TABELA 6: VIABILIDADE
 # ============================================================
-fig, ax = plt.subplots(figsize=(10, 4.5))
+fig, ax = plt.subplots(figsize=(10, 4.2))
 ax.axis("off")
 
 col_labels = ["Configuração", "Tempo/CAT", "50 CATs", "100 CATs", "Custo"]
@@ -223,7 +223,7 @@ table_data = [
 table = ax.table(cellText=table_data, colLabels=col_labels, cellLoc="center", loc="center")
 table.auto_set_font_size(False)
 table.set_fontsize(11)
-table.scale(1.2, 1.5)
+table.scale(1.2, 1.4)
 
 for j in range(len(col_labels)):
     table[0, j].set_facecolor("#2C3E50")
@@ -234,11 +234,11 @@ for i in range(4):
     for j in range(len(col_labels)):
         table[i + 1, j].set_facecolor(colors[i])
 
-ax.set_title("Figura 6 — Viabilidade por Configuração de Hardware", fontweight="bold", fontsize=11, pad=2)
-ax.text(0.5, 0.01, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
+ax.set_title("Figura 6 — Viabilidade por Configuração de Hardware", fontweight="bold", fontsize=11, pad=1)
+ax.text(0.5, 0.005, "Fonte: Dados gerados pelo autor (2026).", ha="center", va="bottom",
         fontsize=9, color="black", style="italic", transform=ax.transAxes)
-plt.subplots_adjust(top=0.95, bottom=0.05)
-plt.savefig("tabelas_tcc/tabela_viabilidade.png", dpi=200, bbox_inches="tight", pad_inches=0.1)
+plt.subplots_adjust(top=0.97, bottom=0.03)
+plt.savefig("tabelas_tcc/tabela_viabilidade.png", dpi=200, bbox_inches="tight", pad_inches=0.05)
 plt.close()
 print("6. tabela_viabilidade.png")
 
