@@ -16,20 +16,26 @@ experimentos/
 ├── fl_50_cats.py               # FL com 50 CATs por empresa
 ├── fl_encrypted.py             # FL com criptografia AES-256 e IPFS
 ├── tcc_final_ate_fl100.ipynb   # Notebook FL (10 rounds)
-└── tcc_crypto_5rounds.ipynb    # Notebook FL + Criptografia (5 rounds)
+├── tcc_crypto_5rounds.ipynb    # Notebook FL + Criptografia (5 rounds)
+└── tcc_5rounds.ipynb           # Notebook FL (5 rounds, sem criptografia)
 ```
 
 ## Como Executar
 
 ### Opção 1: Google Colab (Recomendado)
 
-#### Notebook FL (10 rounds)
-1. Abra `tcc_final_ate_fl100.ipynb` no Google Colab
+#### Notebook FL (5 rounds)
+1. Abra `tcc_5rounds.ipynb` no Google Colab
 2. Configure GPU: Runtime > Change runtime type > GPU: T4
 3. Execute todas as células
 
 #### Notebook FL + Criptografia (5 rounds)
 1. Abra `tcc_crypto_5rounds.ipynb` no Google Colab
+2. Configure GPU: Runtime > Change runtime type > GPU: T4
+3. Execute todas as células
+
+#### Notebook FL (10 rounds)
+1. Abra `tcc_final_ate_fl100.ipynb` no Google Colab
 2. Configure GPU: Runtime > Change runtime type > GPU: T4
 3. Execute todas as células
 
